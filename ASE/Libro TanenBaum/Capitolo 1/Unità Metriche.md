@@ -1,0 +1,2 @@
+![[unitametriche.png]]
+Quando si fa riferimento ai dati si utilizza la base 2 poiché lo spazio di indirizzamento è sempre una potenza di due. Quindi 1 kB di memoria contiene 1024 Byte (= 216) e non 1000 Byte.
