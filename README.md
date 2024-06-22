@@ -10,3 +10,5 @@ Alcune Informazioni:
 3) Gli appunti di analisi 1 sono quelli che ci ha fornito il professore durante il corso, per maggiori informazioni e per esercizi visitare la pagina del professore:https://www.mat.uniroma2.it/~tauraso/analisi1inf2324.html
 
 4) Per il momento ci sta solo il primo capitolo di Matematica discreta, appena finisco di scansionare il resto degli appunti inseriro anche i prossimi capitolo, lo stesso vale per Logica e Reti logiche
+
+5) Ci sono solo gli appunti delle prime lezioni di Geometria, gli altri verrano aggiunti man mano che li farò
