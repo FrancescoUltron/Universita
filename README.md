@@ -11,4 +11,4 @@ Alcune Informazioni:
 
 4) Per il momento ci sta solo il primo capitolo di Matematica discreta, appena finisco di scansionare il resto degli appunti inseriro anche i prossimi capitolo, lo stesso vale per Logica e Reti logiche
 
-5) Ci sono solo gli appunti delle prime lezioni di Geometria, gli altri verrano aggiunti man mano che li farò
+5)Durante l'anno aggiungerò i vari appunti delle lezioni che svolgerò
