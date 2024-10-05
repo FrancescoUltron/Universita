@@ -7,7 +7,7 @@ Alcune Informazioni:
   
 2) Nella directory di Programmazione si trovano anche programmi scritti nel linguaggio di assemblaggio ARM, cosa che non è stata svolta nelle lezioni di programmazione, bensì in quelle di ASE
   
-3) Gli appunti di analisi 1 sono quelli che ci ha fornito il professore durante il corso, per maggiori informazioni e per esercizi visitare la pagina del professore:https://www.mat.uniroma2.it/~tauraso/analisi1inf2324.html
+3) Gli appunti di analisi 1 sono quelli che ci ha fornito il professore durante il corso, per maggiori informazioni e per esercizi visitare la pagina del professore:https://www.mat.uniroma2.it/~tauraso.html
 
 4) Per il momento ci sta solo il primo capitolo di Matematica discreta, appena finisco di scansionare il resto degli appunti inseriro anche i prossimi capitolo, lo stesso vale per Logica e Reti logiche
 
