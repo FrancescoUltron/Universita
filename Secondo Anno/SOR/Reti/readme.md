@@ -1,0 +1,1 @@
+Le lezioni si faranno al secondo semestre.
