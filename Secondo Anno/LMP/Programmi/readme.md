@@ -1,0 +1,1 @@
+I programmi sono all'interno delle directory, ogni directory riguarda un qualche esercizio o delle prove fatte nello specificho, quindi o si scarica l'intera cartella o i programmi non funzioneranno. 
