@@ -7,4 +7,4 @@ Materie del primo anno:
 5) Architettura dei Sistemi di Elaborazione (ASE)
 6) Programmazione
 
-Nessuna di queste materie sono finite perché le sto ancora seguendo.
+
