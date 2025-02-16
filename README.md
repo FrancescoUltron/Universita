@@ -10,3 +10,6 @@ Alcune Informazioni:
 3) Per il momento ci sta solo il primo capitolo di Matematica discreta, appena finisco di scansionare il resto degli appunti inseriro anche i prossimi capitolo, lo stesso vale per Logica e Reti logiche
 
 4) Durante l'anno aggiungerò i vari appunti delle lezioni che svolgerò
+
+5) Per calcolo delle probabilità e statistica ci sono gli appunti soltanto delle prime lezioni
+
