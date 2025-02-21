@@ -13,6 +13,4 @@ Alcune Informazioni:
 
 5) Per calcolo delle probabilità e statistica ci sono gli appunti soltanto delle prime lezioni
 
-==prova==
-
----
+**Prova**
