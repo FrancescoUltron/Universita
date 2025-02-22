@@ -1,0 +1,1 @@
+Appunti della parte di prolog ancora da aggiungere
