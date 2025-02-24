@@ -1,1 +1,1 @@
-Le lezioni si faranno al secondo semestre.
+## Appunti del libro: Computer Networking (A TOP-DOWN APPROACH)
