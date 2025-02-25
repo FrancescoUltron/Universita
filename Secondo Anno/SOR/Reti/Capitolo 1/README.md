@@ -18,8 +18,10 @@ Le comunicazioni tramite gli host avvengono tramite dei **protocolli**, i quali 
 
 I servizi possono essere: web, email, giochi, e-commerce e molti altri. Queste applicazioni si dicono **applicazioni distribuite**, cioè che involvono molti end system che si scambiano informazioni. Queste applicazioni vengono eseguite sugli end system e 'siedono' ad un livello superiore rispetto alla rete.
 
+Inoltre gli end system attaccati ad Internet forniscono delle **interfacce socket** che specificano il modo in cui l'applicazione eseguita sull'end system chiede all'infrastruttrura Internet di spedire messaggi ad un altro specifico end system o programma di destinazione.
+
 ---
 Prima abbiamo parlato di protocolli, cerchiamo di dare una definizione su che cosa fanno:
 
 >Un protocollo definisce il **formato**, **l'ordine** dei messaggi mandati e ricevuti fra entità all'interno di una rete e le **azioni** che vengono svolte durante la ricezione o la trasmissione dei messaggi.
-![Immagine non trovata](Immagini/HumanProtocol)
+![Immagine non trovata](Immagini/HumanProtocol.png)
