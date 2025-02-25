@@ -22,3 +22,4 @@ I servizi possono essere: web, email, giochi, e-commerce e molti altri. Queste a
 Prima abbiamo parlato di protocolli, cerchiamo di dare una definizione su che cosa fanno:
 
 >Un protocollo definisce il **formato**, **l'ordine** dei messaggi mandati e ricevuti fra entità all'interno di una rete e le **azioni** che vengono svolte durante la ricezione o la trasmissione dei messaggi.
+![Immagine non trovata](immagini/HumanProtocol)
