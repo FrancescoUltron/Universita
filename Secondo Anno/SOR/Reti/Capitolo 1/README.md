@@ -55,6 +55,7 @@ La linea telefonica di casa porta sia i dati di Internet che i segnali telefonic
 - La banda **tradizionale** per la telefonia (da 0 a 4 kHz).
 
 Questo sistema permette di **usare la stessa linea telefonica** per fare una telefonata e per connettersi a Internet **contemporaneamente**, come se fossero tre collegamenti separati. Per fare in modo che i segnali non si mescolino, un "**splitter**" a casa divide i segnali telefonici e i dati, inviando quelli dati al modem DSL. Nella centrale, il DSLAM separa anche i segnali per mandarli dove devono andare: i dati vanno a Internet e le chiamate telefoniche continuano a viaggiare sulla linea telefonica. Molte case possono connettersi a un singolo DSLAM, permettendo così una **connessione condivisa tra molte abitazioni.**
+
 ![Immagine non trovata](Immagini/DSL.png)
 
 ---
@@ -64,7 +65,7 @@ Negli accessi tramite cavo, abbiamo un cavo fisico che connette diverse case ad 
 Per evitare che segnali a frequenze diverse si vadano ad intralciare si utilizza un *frequency division multiplexing (FDM).* (Ovviamente le stesse frequenze **condividono** lo stesso cavo quindi bisogna trovare un modo per gestirle, lo vederemo nei capitoli succesivi).
 
 Questi tipo di rete è anche chiamato **Hybrid fiber coax (HFC)**, cioè che combina fibra ottica e cavo coassiale.
-![Immagine non trovata](Cavo.png)
+![Immagine non trovata](Immagini/Cavo.png)
 
 ---
 Entrambi i tipi di rete di cui abbiamo parlato sono **assimetrici**, cioè abbiamo una differenza nella velocità di **downstream** e **upstream**, questa differenza è dovuta dal fatto che in entrambi i casi ci interessa essere dei client - quindi ricevere molti più dati rispetto ad inviarli.
@@ -79,4 +80,5 @@ Entrambi i tipi di rete di cui abbiamo parlato sono **assimetrici**, cioè abbia
 Guardando nello specifico un rete di una casa troveremo quindi: Un **cavo o un modem DSL**, connesso al modem abbiamo un **router** che connessione con e senza cavo ai dispositivi della casa, quindi il router sarà connesso a dispositivi tramite cavo (*wired Ethernet* - 1 Gbps) oppure ad un **access point** per il WiFi wireless (54 - 450 Mbps).
 
 >Solitamente modem, router e access point sono posizionati nella stessa scatola.
+
 ![Immagine non trovata](Immagini/Home_Network.png)
