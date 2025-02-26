@@ -122,8 +122,7 @@ Immaginiamo di avere un host che deve spedire un file ad un end system, il modo 
 3) I pacchetti sono inviati sulla rete di accesso ad **tasso di trasmissione** $R$.
 
 >Possiamo considerare $R$ come la **capacità** oppure la **larghezza di banda della connessione.** Inoltre: $$
-\text{Ritardo di trasmissione} = \frac{L \, (\text{bits})}{R \, (\text{bits/sec})}
-$$
+\text{Ritardo di trasmissione} = \frac{L \, (\text{bits})}{R \, (\text{bits/sec})} $$
 >Il ritardo di trasmissione è il tempo necessario per spedire pacchetti da $L$ bits nella rete.
 
 ![Immagine non trovata](Immagini/trasmissione_dati.png)
