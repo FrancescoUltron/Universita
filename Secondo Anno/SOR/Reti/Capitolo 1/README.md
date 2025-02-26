@@ -82,3 +82,88 @@ Guardando nello specifico un rete di una casa troveremo quindi: Un **cavo o un m
 >Solitamente modem, router e access point sono posizionati nella stessa scatola.
 
 ![Immagine non trovata](Immagini/Home_Network.png)
+
+---
+**Wireless network**
+
+Abbiamo già parlato di reti wireless all'interno di una casa, cerchiamo di capire meglio di cosa si tratta. Esistono due tipi di reti senza cavo:
+
+- **Wireless local area networks** - WiFi
+- **Wide-area cellular access networks** - 3G, 4G, 5G
+
+In entrambi i casi abbiamo un *access point*, cioè un posto da cui gli end system possono mandare e ricevere dati.
+
+---
+**Wireless local area networks (WLAN)**
+
+Sono reti che si trovano all'interno di case o aziende, lavorano in un raggio di circa 10 - 100 metri e la velocità di trasmissione è circa: 11, 54 o 540Mbps.
+Questi protocolli sono standardizzati dalla **IEEE** nella famiglia delle tecnologie 802.11, consociute come tecnologie WiFi.
+
+---
+**Wide-area cellular access networks**
+
+Sono reti che vengono **fornite dagli operatori delle rete mobile e cellulare**, la velocità di trasmissione è sulle decine di Mbps. Al momento ci troviamo alla quarta generazione (4G) - è in sviluppo amche il 5G.
+
+---
+**Enterprise network**
+
+Sono come le home network, ma consistono in un insieme di diverse tecnologie, quindi sia ethernet - (100Mbps, 1Gbps, 10Gbps) - che senza cavo. La differenza principale rispetto alle home network è la **maggiore quantità di router e switches** usati per dirigere grandi quantità di pacchetti.
+
+---
+**Data center network**
+
+Sono un tipo particolare di Enterprise network, ma sono molto più potenti, poichè connettono **centinaia di server insieme e diretti ad Internet.** 
+
+Con questo abbiamo finito la visione generale sui vari tipi di reti di accesso, adesso controlliamo cosa significa **inviare dei pacchetti su una rete** quali sono i **dispositivi fisici** con il quale possiamo inviare i pacchetti.
+
+---
+**Inviare pacchetti sulla rete**
+
+Immaginiamo di avere un host che deve spedire un file ad un end system, il modo in cui questa trasmissione avviene è semplice:
+
+1) Si prende il messaggio che si vuole spedire.
+2) Si divide il messaggio in piccoli *chunk* - cioè i **pacchetti** - ognuno di $L$ bits.
+
+>All'interno di ogni pacchetto abbiamo anche delle informazioni aggiunte contenute in un **header**, le informazioni dell'header dipendono dal protocollo che effettua la trasmissione.
+
+3) I pacchetti sono inviati sulla rete di accesso ad **tasso di trasmissione** $R$.
+
+>Possiamo considerare $R$ come la **capacità** oppure la **larghezza di banda della connessione.** Inoltre: $$\text{Ritardo di trasmissione} = \frac{L \, (\text{bits})}{R \, (\text{bits/sec})}$$Il ritardo di trasmissione è il tempo necessario per spedire pacchetti da $L$ bits nella rete.
+
+---
+**Caratteristiche fisiche della trasmissione dei dati**
+
+Sappiamo che i bit vengono propagati tra coppie di ricevitori e mandanti, la **connessione fisica** è il mezzo con la quale si possono spedire bit. Li possiamo dividere in:
+
+- **Mezzi guidati - Guided media**: Trasmettono segnali tramite dei mezzi fisici.
+- **Mezzi non guidati - Unguided media**: I segali vengono propagati liberamente.
+
+---
+**Twisted pair (TP)**
+
+Sono due **fili di rame intrecciati** - inizialmente facevano riferimento solo alla linea telefonica - oggi invece si riferiscono anche all'ethernet o adsl, il tasso di trasmissione è nell'ordine di centinaia di Mbps fino a centinaia di Gbps. Sono suscettibili a rumori elettromagnetici.
+
+---
+**Cavo coassiale**
+
+Sono due conduttori fatti di rame, ma sono **concetrici** e non paralleli. Con le giuste protezioni possono raggiungere tassi di trasmissione molto elevati e possono avere **diversi canali con diverse frequenze.**
+
+>I primi cavi ethernet funzionavano tramite cavi coassiali.
+
+---
+**Cavi in fibra ottica**
+
+Sono fibre di vetro che trasmettono impulsi di luce - ogni impulso equivale ad un bit - lavorano su velocità di trasmissione elevatissime ed hanno un tasso di errore molto basso rispetto ai mezzi visti precedentemente - sono anche immuni a rumori elettromagetici. Vengono usate per comunicazioni molto distanti, ma hanno come problema il costo elevato.
+
+---
+**Wireless radio**
+
+I segnali vengono trasportati in diverse *bande* dello spettro elettromagetico, quindi non ci sta nessun cavo. I segnali vengono trasferiti in **broadcast**, quindi tutti i dispositivi nel raggio di azione possono intercettarli.
+Il problema principale sono gli effetti che ha l'ambiente circostante sui segnali, questi infatti possono essere: **riflessi, bloccati da oggetti, essere intercettati creando rumore.**
+Esistono diversi tipi di segnali radio wireless, sono molto complicati da ottenere, alcuni sono:
+
+- **Wireless LAN (WiFi)** - Decine di metri con velocità sui 10 - 100 Mbps.
+- **Wide-Area** - Decine di Mbps su svariati Km.
+- **Bluetooth** - Piccole distanze con tasso di trasmissione limitato.
+- **Microonde terrestri** - Comunicazioni punto-punto con canali a 45 Mbps.
+- **Satelliti** - Fino a 45 Mbps con ritardi end to end di 270msec. 
