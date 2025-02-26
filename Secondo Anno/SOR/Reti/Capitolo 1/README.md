@@ -26,3 +26,57 @@ Prima abbiamo parlato di protocolli, cerchiamo di dare una definizione su che co
 >Un protocollo definisce il **formato**, **l'ordine** dei messaggi mandati e ricevuti fra entità all'interno di una rete e le **azioni** che vengono svolte durante la ricezione o la trasmissione dei messaggi.
 
 ![Immagine non trovata](Immagini/HumanProtocol.png)
+
+### Network edge
+
+Un nodo della rete, cioè un host, può essere distinti in:
+
+- **Client** - Riceve servizi.
+- **Server** - Solitamente si trovano nei data center e hanno il compito di offrire servizi.
+
+ Consideriamo adesso la **rete di accesso**, cioè la rete che connette fisicamente un end system al primo router (**Edge router).** Esistono diversi tipi di reti di accesso divisibili in: 
+
+- Reti ad accesso residenziale;
+- Reti ad accesso istituzionale;
+- Reti ad accesso mobile;
+
+Oggi, i due tipi di accesso a banda larga residenziale più diffusi sono la **Digital Subscriber Line** (DSL) e **tramite cavo.**
+
+---
+**Accesso tramite DSL:**
+
+> L'accesso ad Internet tramite DSL viene fornito dalla stessa compagnia telefonica che fornisce i cavi del telefono per i trasferimenti di dati. Quindi i modem degli utenti della rete usano la linea telefonica (**doppino telefonico**) per collegarsi ad un **DSLAM**.
+
+Il modem DSL prende i dati digitali e li trasforma in analogici ad alta frequenza, questi vengono inviati attraverso i cavi alla centrale e poi vengono convertiti di nuovo in digitali quando arrivano al DSLAM.
+La linea telefonica di casa porta sia i dati di Internet che i segnali telefonici tradizionali, ma questi vengono condificati a frequenze diverse:
+
+- Una banda ad **alta velocità** per i dati in arrivo (da 50 kHz a 1 MHz).
+- Una banda a **velocità media** per i dati in uscita (da 4 kHz a 50 kHz).
+- La banda **tradizionale** per la telefonia (da 0 a 4 kHz).
+
+Questo sistema permette di **usare la stessa linea telefonica** per fare una telefonata e per connettersi a Internet **contemporaneamente**, come se fossero tre collegamenti separati. Per fare in modo che i segnali non si mescolino, un "**splitter**" a casa divide i segnali telefonici e i dati, inviando quelli dati al modem DSL. Nella centrale, il DSLAM separa anche i segnali per mandarli dove devono andare: i dati vanno a Internet e le chiamate telefoniche continuano a viaggiare sulla linea telefonica. Molte case possono connettersi a un singolo DSLAM, permettendo così una **connessione condivisa tra molte abitazioni.**
+![Immagine non trovata](Immagini/DSL.png)
+
+---
+**Accessi tramite cavo:**
+
+Negli accessi tramite cavo, abbiamo un cavo fisico che connette diverse case ad un unico *fine* di cavo. I segnali che vengono mandati su questo cavo sono a **frequenze diverse.**
+Per evitare che segnali a frequenze diverse si vadano ad intralciare si utilizza un *frequency division multiplexing (FDM).* (Ovviamente le stesse frequenze **condividono** lo stesso cavo quindi bisogna trovare un modo per gestirle, lo vederemo nei capitoli succesivi).
+
+Questi tipo di rete è anche chiamato **Hybrid fiber coax (HFC)**, cioè che combina fibra ottica e cavo coassiale.
+![Immagine non trovata](Cavo.png)
+
+---
+Entrambi i tipi di rete di cui abbiamo parlato sono **assimetrici**, cioè abbiamo una differenza nella velocità di **downstream** e **upstream**, questa differenza è dovuta dal fatto che in entrambi i casi ci interessa essere dei client - quindi ricevere molti più dati rispetto ad inviarli.
+
+| Tipo di rete | Velocità in downstream | Velocità in upstream |
+| -------------| -----------------------|----------------------|   
+| Cavo         | 40Mbps - 1.2GBps       | 30 - 100 Mbps        | 
+| DSL          | 24 - 53Mbps            | 3.5 - 16Mbps         |
+
+>Nel DSL la velocità di trasmissione dipende molto dalla distanza dall'ufficio centrale.
+
+Guardando nello specifico un rete di una casa troveremo quindi: Un **cavo o un modem DSL**, connesso al modem abbiamo un **router** che connessione con e senza cavo ai dispositivi della casa, quindi il router sarà connesso a dispositivi tramite cavo (*wired Ethernet* - 1 Gbps) oppure ad un **access point** per il WiFi wireless (54 - 450 Mbps).
+
+>Solitamente modem, router e access point sono posizionati nella stessa scatola.
+![Immagine non trovata](Immagini/Home_Network.png)
