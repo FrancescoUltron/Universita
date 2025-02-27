@@ -154,4 +154,93 @@ Esistono diversi tipi di segnali radio wireless, sono molto complicati da ottene
 - **Wide-Area** - Decine di Mbps su svariati Km.
 - **Bluetooth** - Piccole distanze con tasso di trasmissione limitato.
 - **Microonde terrestri** - Comunicazioni punto-punto con canali a 45 Mbps.
-- **Satelliti** - Fino a 45 Mbps con ritardi end to end di 270msec. 
+- **Satelliti** - Fino a 45 Mbps con ritardi end to end di 270msec.
+
+---
+### The network Core
+
+Abbiamo visto fino ad ora i nodi che si trovano ai vertici della rete, guardiamo adesso il cuore della rete. Il cuore è composto da un insieme di router che sono interconnessi tra di loro. Abbiamo già visto come gli end system si possono spedire pacchetti, ma non abbiamo menzionato che ogni pacchetto per arrivare a destinazione deve viaggiare attraverso dei **canali di comunicazione** e **packet switches.** la rete *inoltra* i pacchetti da un router all'altro attraverso i canali di comunicazione she creano il **percorso da sorgente a destinazione.** Esistono due principali *modalità di commutazione* per costruire una rete, basate sul **Packet switching o sul Circuit switching.**
+
+---
+**Packet Switching (Commutazione a pacchetto)**
+
+Ci sono due funzioni in particolare che il cuore della rete deve svolgere:
+
+- **Forwading - Switching - Inoltrare**
+- **Routing**
+
+Controlliamo come è composto l'interno di un router per capire meglio di cosa trattano.
+
+!()["Switvhing.png"]
+
+All'interno di ogni router abbiamo una tabella che viene fornita da un **algoritmo di routing**, questa tabella serve per decidere in quale canale di comunicazione inoltrare il pacchetto che sta arrivando. In base al valore del **valore di destinazione nell'header** il pacchetto è inoltrato in diversi canali. La differenza tra le due funzioni descritte è che il forwarding è un'operazione **locale** che consiste solo nel decide in quale canale muovere il pacchetto una volta che arriva ad un determinato router, il routing invece è **globale**, ha il compito di determinare il percorso da sorgente a destinazione.
+
+Il ritardo di trasmissione è dato dal rapporto tra la grandezza dei pacchetti da inviare e la velocità del mezzo di comunicazione, ma prima di poter inviare nuovamente un pacchetto da un router dobbiamo aspettare che questo riceva l'intero paccheto, questa operazione si chiama **store-and-forward.**
+
+!(imma)[]
+
+Cosa succede se degli end system vogliono mandare dei pacchetti ad un router che poi li deve inoltrare ad altri end system, ma la velocità di trasmissione tra end system e router è molto maggiore rispetto a quella della rete di accesso? Semplicemente si forma una **coda.**
+
+>Una coda si forma quando una quantità di lavoro arriva più velocemente rispetto al tempo che ci vuole per servirla.
+
+Quando la velocità di arrivo dei pacchetti è maggiore rispetto a quella di trasmissione avviene che i pacchetti formano una coda, se arrivano troppi pacchetti succede che il buffer di memoria del router non riesce a mantenerli tutti, di conseguenza molti pacchetti andrebbero persi. Se la rete non controlla gli end system che mandano i pacchetti si possono creare queste situazioni poco convenienti.
+
+!(Imm)
+
+---
+**Circuit Switching (Commutazione a circuito)**
+
+Tutto quello che abbiamo visto nella sezione precedente ricade nel **Packet Switching**, ma non è l'unico modo per muovere dati in una rete, basti pensare a come funzionano le reti telefoniche; queste infatti si basano su un tipo di struttura di commutazione chiamata **circuit switching.**
+
+Il circuit switching si basa sull'idea di allocare delle risorse end-end riservate per delle chiamate fra sorgente e destinazione, queste sono risorse non condivise che garantiscono una connessione senza perdita di dati o formazioni di code. Il problema è che sono molto inefficienti, se la larghezza di banda non è usata dalla chiamata allora viene persa.
+
+>La larghezza di banda rappresenta la "larghezza" del "canale" e quanto spazio ci sta per fare passare dei dati.
+
+Il circuit switching può essere ottenuto in due modi:
+
+- **Frequency Division Multiplexing (FDM):** Le frequenze elettromagnetiche sono divise in delle bande strette, ogni chiamata ha una sua banda che viene trasmessa al massimo della capacità della banda.
+
+!(imm)[]
+
+- **Time Division Multiplexing (TDM):** divide il tempo in piccole "fette" e assegna a ciascun flusso di dati una "fetta" di tempo specifica per inviare i suoi dati.
+
+!(Immg)[]
+
+---
+**Packet switching VS Circuit Switching**
+
+Immaginiamo di trovarci in questa situazione, abbiamo una rete con $n$ possibili utenti la velocità di trasmissione è di 1Gb/s, ogni utente ha bisogno di 100Mb/s quando attivo e ogni utente è attivo il $10$% del tempo. Quale tipo di commutazione è meglio usare?
+
+Circuit Switching: $10$ Utenti;
+
+Packet Switching: $35$ Utenti --> La probabilità che 10 utenti lavorano contemporaneamente è di $0.04$%;
+
+Si potrebbe quindi pensare di usare il packet switching in modo tale da avere molti utenti a discapito della perdità di pochi pacchetti (**Guadagno statistico del multiplexing del Packet Switching).**
+
+Il packet switching è il vincitore, anche la telefonia moderna lo usa. E' comodo perché è perfetto per *dati bursty*, cioè per dati mandati in maniera occasionale, le risorse possono essere condivise ed è molto semplice da installare.
+Il problema principale riguarda la possibilità di **congestione**, cioè la perdita di pacchetti dovuta ad un overflow del buffer di memoria del router, ma molti protocolli moderni prendono in considerazione questa situazione, trovando delle soluzioni al problema.
+
+> In alcune situazioni è possibile creare delle reti che commutano tramite packet switching, ma usando un comportamento da circuit switching, ma è molto complesso.
+
+---
+**Struttura di Internet: Una rete di reti**
+
+Gli host che si connettono ad Internet accedono tramite degli **Internet Service Provider (ISP)**, questi devono essere connessi in modo tale che due host possano comunicare.
+Esistono diversi modi in cui possiamo connetterli:
+
+- Possiamo connettere ogni *access ISP* fra di loro, ma è una soluzione troppo complicata: $O(n^2)$ connessioni, troppo difficile da scalare.
+
+- Possiamo connettere ogni *access ISP* ad un *ISP di transito*, è come se avessimo una sottorete di ISP che ci permetto di connetterci a tutti gli ISP, può funzionare per reti più piccole e non globali, inoltre significa che ci dovrebbe essere un solo ISP.
+
+- Siccome ci sono tanti ISP avremo tante sottoreti, queste comunicano tra di loro tramite degli **IXP (Internet Exchange Point)**, quando due sottoreti sono connesse direttamente allora avremo un **peering link.**
+
+- Possiamo anche introddure degli ISP regionali che si pongono fra le reti d'accesso e gli ISP di transito, inoltre anche aziende di come google possono avere le loro reti globali.
+
+!(imm)[]
+
+Al centro dell'Internet avviamo delle reti molto grandi ben connesse, chiamate anche **Tier 1 commercial ISP** ed hanno una copertura a livello nazionale e internazionale. Allontanandoci abbiamo gli **IXP**, gli **ISP regionali** e poi le **reti d'accesso**.
+In tutto questo ci sono anche i **contenti provider networks**, cioè reti privatre che connettono i loro data center ad'internet bypassando ISP regionali e di tier 1.
+
+!(Immg)[]
+
+>**POP (Point Of Presence)**: è un **punto di accesso fisico** che un Internet Service Provider (ISP) utilizza per collegare i suoi utenti alla rete.
