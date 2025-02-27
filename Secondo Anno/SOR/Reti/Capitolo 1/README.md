@@ -171,7 +171,7 @@ Ci sono due funzioni in particolare che il cuore della rete deve svolgere:
 
 Controlliamo come è composto l'interno di un router per capire meglio di cosa trattano.
 
-![Immagine non trovata](Immagini/Switching.png)
+![Immagine non trovata](Immagini/switching.png)
 
 All'interno di ogni router abbiamo una tabella che viene fornita da un **algoritmo di routing**, questa tabella serve per decidere in quale canale di comunicazione inoltrare il pacchetto che sta arrivando. In base al valore del **valore di destinazione nell'header** il pacchetto è inoltrato in diversi canali. La differenza tra le due funzioni descritte è che il forwarding è un'operazione **locale** che consiste solo nel decide in quale canale muovere il pacchetto una volta che arriva ad un determinato router, il routing invece è **globale**, ha il compito di determinare il percorso da sorgente a destinazione.
 
