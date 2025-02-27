@@ -171,13 +171,13 @@ Ci sono due funzioni in particolare che il cuore della rete deve svolgere:
 
 Controlliamo come è composto l'interno di un router per capire meglio di cosa trattano.
 
-!()["Switvhing.png"]
+![Immagine non trovata](Immagini/Switching.png)
 
 All'interno di ogni router abbiamo una tabella che viene fornita da un **algoritmo di routing**, questa tabella serve per decidere in quale canale di comunicazione inoltrare il pacchetto che sta arrivando. In base al valore del **valore di destinazione nell'header** il pacchetto è inoltrato in diversi canali. La differenza tra le due funzioni descritte è che il forwarding è un'operazione **locale** che consiste solo nel decide in quale canale muovere il pacchetto una volta che arriva ad un determinato router, il routing invece è **globale**, ha il compito di determinare il percorso da sorgente a destinazione.
 
 Il ritardo di trasmissione è dato dal rapporto tra la grandezza dei pacchetti da inviare e la velocità del mezzo di comunicazione, ma prima di poter inviare nuovamente un pacchetto da un router dobbiamo aspettare che questo riceva l'intero paccheto, questa operazione si chiama **store-and-forward.**
 
-!(imma)[]
+![Immagine non trovata](Immagini/coda.png)
 
 Cosa succede se degli end system vogliono mandare dei pacchetti ad un router che poi li deve inoltrare ad altri end system, ma la velocità di trasmissione tra end system e router è molto maggiore rispetto a quella della rete di accesso? Semplicemente si forma una **coda.**
 
@@ -185,7 +185,7 @@ Cosa succede se degli end system vogliono mandare dei pacchetti ad un router che
 
 Quando la velocità di arrivo dei pacchetti è maggiore rispetto a quella di trasmissione avviene che i pacchetti formano una coda, se arrivano troppi pacchetti succede che il buffer di memoria del router non riesce a mantenerli tutti, di conseguenza molti pacchetti andrebbero persi. Se la rete non controlla gli end system che mandano i pacchetti si possono creare queste situazioni poco convenienti.
 
-!(Imm)
+![Immagine non trovata](Immagini/store-and-forward.png)
 
 ---
 **Circuit Switching (Commutazione a circuito)**
@@ -200,11 +200,12 @@ Il circuit switching può essere ottenuto in due modi:
 
 - **Frequency Division Multiplexing (FDM):** Le frequenze elettromagnetiche sono divise in delle bande strette, ogni chiamata ha una sua banda che viene trasmessa al massimo della capacità della banda.
 
-!(imm)[]
+![Immagine non trovata](Immagini/FDM.png)
+
 
 - **Time Division Multiplexing (TDM):** divide il tempo in piccole "fette" e assegna a ciascun flusso di dati una "fetta" di tempo specifica per inviare i suoi dati.
 
-!(Immg)[]
+![Immagine non trovata](Immagini/TDM.png)
 
 ---
 **Packet switching VS Circuit Switching**
@@ -236,11 +237,11 @@ Esistono diversi modi in cui possiamo connetterli:
 
 - Possiamo anche introddure degli ISP regionali che si pongono fra le reti d'accesso e gli ISP di transito, inoltre anche aziende di come google possono avere le loro reti globali.
 
-!(imm)[]
+![Immagine non trovata](Immagini/Internet.png)
 
 Al centro dell'Internet avviamo delle reti molto grandi ben connesse, chiamate anche **Tier 1 commercial ISP** ed hanno una copertura a livello nazionale e internazionale. Allontanandoci abbiamo gli **IXP**, gli **ISP regionali** e poi le **reti d'accesso**.
 In tutto questo ci sono anche i **contenti provider networks**, cioè reti privatre che connettono i loro data center ad'internet bypassando ISP regionali e di tier 1.
 
-!(Immg)[]
+![Immagine non trovata](Immagini/Rete.png)
 
 >**POP (Point Of Presence)**: è un **punto di accesso fisico** che un Internet Service Provider (ISP) utilizza per collegare i suoi utenti alla rete.
