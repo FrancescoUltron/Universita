@@ -261,6 +261,8 @@ $$
 
 - $d_{prop}:$ Ritardo di Propagazione --> Il tempo che impiega un bit per **passare per un mezzo di comunicazione.** ($d_{prop} = d/s$) dove $d$ è la lunghezza del mezzo fisico, mentre $s$ è la velocità di propagazione.
 
+![Immagine non trovata](Immagini/Ritardi.png)
+
 ---
 **Ritardi dovuto alle code (Più in dettaglio)**
 
@@ -273,7 +275,7 @@ Guardiamo più in dettaglio questi tipi di ritardo definendo:
 Quindi: $$\frac{L*a}{R} = \frac{Tasso\;di\;arrivo\;dei\;bit}{Tasso\;di\;servizio\;dei\;bit} = Intensita'\;del\;traffico$$
 Se questo rapporto si avvicina allo $0$ significa che i ritadi relativi alla coda sono brevi, più il valore si avvicina ad $1$ più aumenta il ritardo. Se il rapporto ha un valore maggiore di $1$ significa che arriva un quantità maggiore di lavoro rispetto a quello che si può svolgere.
 
-!(imm)
+![Immagine non trovata](Immagini/grafico.png)
 
 ---
 **Traceroute**
@@ -289,6 +291,8 @@ Per ogni $i$:
 
 Quindi ogni router riceverà tre pacchetti dal computer che fa la richiesta.
 
+![Immagine non trovata](Immagini/traceroute.png)
+
 >Gli **RTT (Round Trip Time) delay** sono il tempo totale che impiega un pacchetto di dati per andare dalla sorgente alla destinazione e tornare indietro al mittente.
 
 Nel contesto di **traceroute**, l'RTT rappresenta il tempo di andata e ritorno di ciascun pacchetto inviato dal programma al router.
@@ -303,9 +307,9 @@ Il throughput è il tasso/velocità con cui i bit vengono inviati da un mittente
 - **Instantaneo** se calcolato in un dato punto nel tempo.
 - **Medio** se calcolato su un lungo periodo di tempo.
 
-!(imm)
+![Immagine non trovata](Immagini/troughput.png)
 
-!(imm)
+![Immagine non trovata](Immagini/troughput2.png)
 
 >Il tempo medio di throughput è solitamente dato dalla velocità di trasmissione del collegamento con la **larghezza di banda minore** lungo il percorso di trasmissione, questo viene chiamato **bottleneck link (Collegamento strozzato).**
 
