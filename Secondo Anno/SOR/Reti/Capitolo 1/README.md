@@ -316,3 +316,37 @@ Il throughput è il tasso/velocità con cui i bit vengono inviati da un mittente
 Questa idea vale anche per reti in cui abbiamo diversi collegamenti verso un unico router.
 
 ---
+### Layer, Incapsulazione e modelli di servizio
+
+Fino ad ora abbiamo descritto i vari elementi che servono per implementare una rete, ma dobbiamo ancora trovare un modo per organizzare tutti questi elementi in un'architettura comune.
+
+L'idea dietro al modello organizzato delle reti è quello del **layering**, cioè creare una struttura basata su diversi strati - impilati come una **pila** - dove ogni strato serve a fornire un **servizio** e ad **implementare o supportare** gli strati adiacenti. Questa struttura ci permette di identificare chiaramenti tutte le componenti della rete e le relazioni tra le varie componenti, inoltre questo sistema è **modularizzato** - cioè se dobbiamo modificare uno strato non dobbiamo preoccuparci di dover modificare l'intera struttura. 
+
+> L'Internet ha una struttura basata sul layering
+
+![Immagine non trovata](Immagini/protocolostack.png)
+
+---
+**Internet Protocol Stack**
+
+Quando presi insieme, i protocolli dei vari strati si chiamano **stack di protocollo**. Lo stack di protocollo di Internet si basa su cinque livelli:
+
+- **Applicazione** - Supporta le applicazioni della rete come HTTP, SMTP, FTP, DNS.
+
+- **Trasporto** - Trasporta messaggi del livello di applicazione tra **endpoints** che usano quella applicazione. I principali tipi di protocollo usati su questo livello sono TCP e UDP. La differenza tra i due consiste nel fatto che il primo fornisce un servizio **connection-oriented** alle applicazioni, quindi è **affidabile**, il secondo fornisce un servizio **connectionless** che al contrario del **TCP non fornisce controllo su pacchetti, flusso dei dati o controllo della congestione.**  Questi protocolli **incapsulano** i dati - aggiungendo altre informazioni - in **segmenti.**
+
+- **Rete** - Responsabile della creazione del percorso tra sorgente e destinazione, incapsula i segmenti del livello di trasporto creando dei **datagrammi.** I protocolli usati in questo livello sono: **IP** e **Protocolli di routing.**
+
+- **Dati** - Traferisce dati tra componenti della rete che sono vicini. Incapsula i datagrammi per creare dei dati chiamati **frame**. I protocolli principali sono: **Ethernet, 802.11 (WiFi), PPP.**
+
+- **Fisico** - Ha il compito di trasportare fisicamente i bit all'interno del mezzo di comunicazione.
+
+Ogni livello essezialmente aggiunge nuovi elementi - gli **header** - all'interno del messaggio originario. Questi servono per far si che la comunicazione avvenga in maniera corretta.
+
+>Internet Protocol Stack non è l'unico protocol stack esistente, basti pensare al modello ISO/OSI composto da sette strati, i cinque del Internet Protocol Stack uniti ai livelli di **Presentazione e Sessione**. Il primo si occupa di come i **dati vengano rappresentati** e **formattati** per l'applicazione. Il suo obiettivo è garantire che i dati trasmessi tra le applicazioni siano **comprensibili**, anche se sono su computer diversi con formati diversi - quindi fornisce servizi come quelli di **compressione, crittografia e conversione di formato.** Il secondo serve a gestire il **dialogo** tra le applicazioni stabilendo una **sessione di comunicazione.** Gestisce la **sincronizzazione e il controllo del flusso dei dati**, assicurando che i dati arrivino nella sequenza giusta e gestendo la comunicazione bidirezionale tra due applicazioni.
+
+>L'**incapsulamento** è il processo in cui i dati vengono "avvolti" in più strati di **informazioni di controllo** (chiamate **header**) mentre passano attraverso i vari livelli di una rete.
+
+![Immagine non trovata](Immagini/messaggi.png)
+
+>Notiamo che gli switch e i router **non hanno bisogno di implementare tutti i livelli** dello stack, poiché a loro non interessa lavorare con i messaggi, ma solo con segmenti o datagrammi.
