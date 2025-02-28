@@ -245,3 +245,70 @@ In tutto questo ci sono anche i **contenti provider networks**, cioè reti priva
 ![Immagine non trovata](Immagini/Rete.png)
 
 >**POP (Point Of Presence)**: è un **punto di accesso fisico** che un Internet Service Provider (ISP) utilizza per collegare i suoi utenti alla rete.
+
+---
+### Performance: Ritardi, perdite e throughput nelle reti Packet-Switched
+
+Quando i pacchetti viaggiano da un nodo all'altro sono soggetti a dei ritardi, ogni pacchetto subisce **tipi diversi di ritardo** per ogni nodo del percorso, i principali ritardi sono:
+$$
+d_{nodal} = d_{proc} +d_{queue} +d_{trans}+d_{prop}
+$$
+- $d_{proc}:$ Nodal Processing --> Ritardi associati all'**inoltrazione** dei pacchetti, **controllo** della tabella, controllo dell'**integrità** del pacchetto. Ordine dei **microsecondi**.
+
+- $d_{queue}:$ Queueing Delay --> Ritardi dovuti al tempo di attesa nella coda del pacchetto. Dipende quindi dal livello di **congestione** del router. 
+
+- $d_{trans}:$ Transmission Delay --> Il tempo che ci vuole per **trasmettere tutti i pacchetti** di bit su un determinato mezzo di trasmissione. ($d_{trans} = L/R$).
+
+- $d_{prop}:$ Ritardo di Propagazione --> Il tempo che impiega un bit per **passare per un mezzo di comunicazione.** ($d_{prop} = d/s$) dove $d$ è la lunghezza del mezzo fisico, mentre $s$ è la velocità di propagazione.
+
+---
+**Ritardi dovuto alle code (Più in dettaglio)**
+
+Guardiamo più in dettaglio questi tipi di ritardo definendo:
+
+- $a:$ Tempo medio di arrivo per un pacchetto.
+- $L:$ Lunghezza del pacchetto (bits).
+- $R:$ Larghezza di banda per il mezzo (Tasso di trasmissione dei bit).
+
+Quindi: $$\frac{L*a}{R} = \frac{Tasso\;di\;arrivo\;dei\;bit}{Tasso\;di\;servizio\;dei\;bit} = Intensita'\;del\;traffico$$
+Se questo rapporto si avvicina allo $0$ significa che i ritadi relativi alla coda sono brevi, più il valore si avvicina ad $1$ più aumenta il ritardo. Se il rapporto ha un valore maggiore di $1$ significa che arriva un quantità maggiore di lavoro rispetto a quello che si può svolgere.
+
+!(imm)
+
+---
+**Traceroute**
+
+I programmi di traceroute sono programmi che ci permetto di **misurare il ritardo** da una sorgente ad un router attraverso un percorso Internet end-end verso una destinazione.
+Per ogni $i$:
+
+- Il programma inoltra tre pacchetti che raggiungeranno il router $i$ sul percorso verso la destinazione. Ciascun pacchetto ha un valore $i$ definito come **time-to-live.**
+
+- Il router $i$ manderà una risposta a ciascuno dei tre pacchetti.
+
+- Il programma misura poi l'**intervallo tra la trasmissione e la risposta**.
+
+Quindi ogni router riceverà tre pacchetti dal computer che fa la richiesta.
+
+>Gli **RTT (Round Trip Time) delay** sono il tempo totale che impiega un pacchetto di dati per andare dalla sorgente alla destinazione e tornare indietro al mittente.
+
+Nel contesto di **traceroute**, l'RTT rappresenta il tempo di andata e ritorno di ciascun pacchetto inviato dal programma al router.
+
+Ovviamente in tutto questo dobbiamo considerare la possibilità di perdere alcuni pacchetti. I pacchetti persi comunque **possono essere trasmessi nuovamente** dal nodo che precede la scomparsa e dalla sorgente, ma a volte non è necessario ritrasmetterli. 
+
+---
+**throughput**
+
+Il throughput è il tasso/velocità con cui i bit vengono inviati da un mittente ad un ricevitore, è misurato in bits/unità di tempo, è può essere:
+
+- **Instantaneo** se calcolato in un dato punto nel tempo.
+- **Medio** se calcolato su un lungo periodo di tempo.
+
+!(imm)
+
+!(imm)
+
+>Il tempo medio di throughput è solitamente dato dalla velocità di trasmissione del collegamento con la **larghezza di banda minore** lungo il percorso di trasmissione, questo viene chiamato **bottleneck link (Collegamento strozzato).**
+
+Questa idea vale anche per reti in cui abbiamo diversi collegamenti verso un unico router.
+
+---
