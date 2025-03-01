@@ -395,4 +395,85 @@ Il motivo è che Internet è stato progettato su un modello di "gruppo di utenti
 >Ricorda che la comunicazione tra utenti mutuamente fidati **non è lo standard**, ma un'eccezione.
 
 ---
+### Storia delle reti di calcolatori e Internet
 
+In questa sezione faremo un breve sintesi sulla storia delle reti ed dell'Internet.
+
+---
+**1961 - 1972 - Sviluppo della commutazione a pacchetto**
+
+Le reti di calcolatori odierne hanno origine nei primi anni '60. In questo periodo la rete telefonica rappresentava la rete di comunicazione predominante. Ricordiamo che - siccome la voce viaggia a velocità costante - la rete telefonica usava la commutazione di circuito.
+Ma con la nascita dei primi calcolatori con sistemi operativi in **time-sharing** ci si è posta la domanda di come potere collegare i calcolatori in modo tale da essere **condivisi** da più utenti geograficamente distanti.
+Tre diversi gruppi di ricerca cominciarono a lavorare sulla commutazione a pacchetto e sono i gruppi di:
+
+- **Leonard Kelinrock** - 1961, 1964 - Usando la teoria delle code dimostrò l'efficacia dell'approccio a commutazione di pacchetto per sorgenti di traffico intermittenti.
+
+- **Paul Baran** - 1964 - Uso della commutazione a pacchetto per traffico vocale militare sicuro.
+
+- **Donald Davies** e **Roger Scantlebury**.
+
+**Licklider e Lawrence Robert** inoltre portarono avanti il progetto di **ARPAnet**, cioè la prima rete a commutazione di pacchetto. Cominciarono man mano ad essere installati i primi commutatori di pacchetti - gli **IMP** - specialmente nelle università.
+Nel 1972 ARPAnet aveva 15 nodi - fu oggetto di una dimostrazione pubblica sulle comunicazione dei computer quell'anno. Venne anche sviluppato il primo protocollo tra nodi ARPAnet - il **NCP** (*network-control protocol*). Lo stesso anno **Ray Tomlinson** reallizzò il primo programma di posta elettronica.
+
+---
+**1972 - 1980 - Reti proprietarie e internetworking**
+
+ARPAnet era una rete singola chiusa - quindi per conunicare con un calcolatore ARPAnet bisognava essere collegato ad uno dei suoi IMP.
+Nel frattempo vennero sviluppate altre reti di commutazione a pacchetto come:
+
+- **ALOHAnet** - Rete a microonde che collegava le università delle isole Hawaii.
+
+- **DARPA** - Rete satellitare a pacchetti.
+
+- **Telenet** - Rete commerciale a commutazione di pacchetto di BBN.
+
+- **Cyclades** - Rete francese a commutazione a pacchetto.
+
+Anche reti time-sharing come **tymnet** e **GE Information Service**, ma anche **SNA** di IBM.
+Nacque anche l'idea di *rete di reti* - cioè un'architettura complessiva di connessione delle reti. Questo lavoro fu svolto da **Vinton Cerf** e **Robert Kahn** che usarono il termine *internetting* per descrivere il loro lavoro.
+Questi principi vennero implementati dal protocollo **TCP** che combinava una consegna dei dati in modo affidabile e in sequenza di ritrasmissione - tuttora parte di TCP - e con funzioni di inoltro - oggi effettuate da IP.
+Ci si rese conto dell'importanza di un servizio inaffidabile e senza controllo di flusso per applicazioni quali telefonia che portarono alla separazione di IP e TCP - nonché allo sviluppo di **UDP**.
+
+---
+**1980 - 1990 - La proliferazione delle reti**
+
+ARPAnet si stava espandendo sempre di più e gli anni '80 rappresentavano un momento di enorme espansione. Questa espansione era tale grazie agli sforzi delle università che volevano una rete in grado di far comunicare tutte le università. Venne fondata **CSNET** per collegare tutti i ricercatori che non avevano accesso ad ARPAnet.
+ARPAnet si spostò dall'uso di **NCP** a **TCP/IP** come protocollo standard. E si cominciò a sviluppare anche il protocollo **DNS** - (*Domain Name System)* che aveva il compito di associare i nomi di Internet leggibili agli indirizzi a 32 bit di IP.
+In parallelo allo svipullo di ARPAnet nacque in Francia il progetto **Minitel** che aveva l'obiettivo di portare la trasmissione di dati in tutte le case. Era essenzialemente una rete pubblica a commutazione di pacchetto tramite l'suo di modem a bassa velocità.
+Il Minitel si trovava in gran parte delle case francesi dieci anni prima che la maggior parte degli americani avesse mai sentito parlare di Internet.
+
+---
+**Anni '90 - Esplosione di Internet**
+
+L'evento principale di questo periodo è la nascita del **World Wide Web** che non solo portava Internet nelle case di tutti, ma svolgeva anche la **funzione di piattaforme** per applicazioni web.
+Questo fu ideato al **CERN** da **Tim Berners-Lee**, inoltre insieme ai suoi collaboratori svilupparono le prime versioni di **HTML**, **HTTP**, **web server** e **browser**.
+Nacquero i primi browser con interfaccia grafica come **netscape** che nel 1996 entrò in guerra con un browser sviluppato da Microsoft.
+La seconda merà deigli anni novanta vide lo sviluppo di molti prodotti e servizi su Internet come:
+
+- La posta elettronica.
+- Il Web.
+- La messaggistica istantanea con liste di contatti.
+- Condivisione di file **peer-to-perr**, il cui precursore fu **Napster**.
+
+Le prime due provenivano dalla comunità di ricerca, le altre da giovani intraprendenti.
+dal 1995 al 2001 rappresentò una montagna russa per Internet sui mercati finanziari. Molte imprese Internet vennero quotate in borsa anche se non portavano guadagni effettivi. Infatti le quotazioni crollarono nel 2000-2001 e molte imprese fallirono. Quindi si stabilirono alcune aziende che furono i grandi vincitori nel settore Internet come: Microsoft, Cisco, Yahoo, eBay, Google e Amazon.
+
+---
+**Il nuovo millennio**
+
+Nei primi due decenni del XXI secolo nessuna tecnologia ha trasformato la società quanto Internet. insieme agli smartphone connessi a Internet. E tuttora si stanno facendo passi avanti su tutti i fronti. I seguenti sviluppi meritano una particolare attenzione:
+
+- **Accesso a Internet ad alta velocità anche da casa** - Tramite fibra ottica e 5G fixed wireless, che permettono la diffusione di video generati da utenti (Youtube), streaming video (Netflix) e videoconferenze multiutente (Skype).
+
+- Le reti wireless permettono un **accesso costante e veloce a Internet e servizi basati sulla posizione** come Yelp, Tinder e Wiz. Inoltre dal 2011 i computer palamari hanno superato il numero di quelli fissi grazie alle loro capacità di connettersi liberamente a Internet.
+
+- Le reti social hanno creato enormi reti di persone che li usano per scambiarsi messaggi. Attraverso le loro API le reti social on-line creano **piattaforme per nuove applicazioni di reti** quali i pagamenti e giochi distribuiti.
+
+- I fornitori di servizio on-line come Google hanno installato le loro reti private estese che non solo connettono i loro data center distribuiti in tutto il mondo, ma sono anche usate per aggirare il più possibile Internet facendo **peering** con gli ISP di basso livello, in modo tale che le ricerche siano veloci come se i data center si trovassero sil computer personaledegli utenti.
+
+- Aziende commerciali e università eseguono loro applicazioni in **'cloud'** in modo tale da fornire applicazioni scalabili, permettere ambienti di memorizzazione e un'accesso implicito alle loro reti private ad alte prestazioni.
+
+---
+### Conclusioni capitolo
+
+Con questo finisce il primo capitolo del corso di reti di calcolatori. Tutte queste idee le andremo a rivedere nello specifico nei prossimi capitoli.
