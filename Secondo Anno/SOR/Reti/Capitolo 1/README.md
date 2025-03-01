@@ -350,3 +350,49 @@ Ogni livello essezialmente aggiunge nuovi elementi - gli **header** - all'intern
 ![Immagine non trovata](Immagini/messaggi.png)
 
 >Notiamo che gli switch e i router **non hanno bisogno di implementare tutti i livelli** dello stack, poiché a loro non interessa lavorare con i messaggi, ma solo con segmenti o datagrammi.
+
+---
+### Reti sotto attacco
+
+Il campo della sicurezza di rete si occupa di come i malintenzionati possono **attacare le reti** e di come possiamo **difenderle**. Con il crecescere delle reti e dell'Internet, anche questo campo è cresciuto a sua volta e siccome non sappiamo ancora di preciso come funzionano le reti questo paragrafo verrà usato per descrivere i tipi di attacco più frequenti. 
+
+---
+**Malware installati sugli host tramite Internet**
+
+Colleghiamo i dispositivi ad Internet per ricevere/inviare dati, ma non tutti i dati che consumiamo sono "buoni". Infatti ne esistono alcuni - noti come **malware** - che possono infettare i nostri dispositivi. Le azioni che effettuano sono gravi: **cancellare file** o **installare spyware** che raccolgono informazioni da mandare ai malintenzionati. Se il nostro host è compromesso potrebbe essere reclutato in una rete di host compromessi chiamata **botnet** controllata dai malintenzionati.
+
+>Molti dei malware moderni sono **autoreplicanti**, cioè che una volta infettato un host cercano riferimenti riguardanti altri host. Questa caratteristica gli permette di diffondersi in maniera esponenziale.
+
+---
+**Attacchi ai server e all'infrastruttura di rete**
+
+Molti degli attacchi che vengono fatti ricadono nella categoria di **negazione del servizio**     (**Dos** - *Denial of Service*). Questo attacco rende inutilizzabile un host o un'altra parte di una rete. Web server, DNS, posta elettronica possono essere tutti soggetti. Sono un tipo di attacco **comune** e li possiamo distinguere in tre categorie:
+
+- *Attacchi alla vulnerabilità dei servizi:* Invio di **pochi messaggi ben costruiti** ad un'applicazione vulnerabile. Se viene inviata la sequenza corretta il servizio si interrompe.
+
+- *Bandwidth flooding (Inondazione di banda):* Vengono inviati un **"diluvio" di pacchetti** all'host bersaglio, così tanti che il collegamento di accesso viene bloccato.
+
+- *Connection flooding (Inondazione di connessioni):* L'attaccante stabilisce **molte connessioni TCP**, tutte queste connessioni ingorgano l'host che non è in grado di accetare le connessioni leggittime.
+
+Prendiamo in considerazione il secondo tipo di attacco per dire due cose in più. Inanzitutto per poter causare danni ad una rete il numero di pacchetti inviato deve essere maggiore rispetto alla velocità di accesso alla rete. Se questa è molto grande allora una singola sorgente non è abbastanza - anzi un ruoter a monte potrebbe individuare subito l'host malevolo - quindi si preferisce usare più sorgenti - questo tipo di attacco si chiama **DDoS**, cioè *Distributed Denial of Service*.
+
+---
+**Analisi del traffico**
+
+Molti utenti accedono ad Internet tramite dispositivi wireless - questo è molto comodo - ma crea una grave vulnerabilità alla sicurezza. Un **ricevitore passivo** - in prossimità di un trasmettitore wireless potrebbe ottenere una copia di ogni pacchetto trasmesso comprese infromazioni sensibili. Questo ricevitore passivo è detto **packet sniffer.** Questo funziona anche su **reti cablate con distribuzione dei pacchetti in broadcast.**
+Se si riesce ad accedere al router di accesso di un istituzione si può installare uno sniffer che fa la copia di tutti i pacchetti. Siccome sono **passivi** - cioè non inviano pacchetti - i packet sniffer sono molto complicati da trovare, la migliore difesa contro gli analizzatori di pacchetti è costituita dalla **crittografia.**
+
+---
+**Mascheramento**
+
+E' molto semplice riuscire a creare un pacchetto con un indirizzo sorgente, contenuto e indirizzo del destinatario. Ed è molto semplice immettere pacchetti in Internet con degli indirizzi sorgenti **"falsi"** in modo tale per spacciarsi per qulacun'altro. Questa tecnica si chiama **IP spoofing**. L'idea per risolvere il problema si tratta in un meccanismo - chiamato *end-point authentication* - che ha il compito di determinare con sicurezza se il messaggio arrivato ha avuto origine da dove supponiamo l'abbia ottenuta.
+
+---
+**Perchè Internet è cosi poco sicuro?**
+
+Il motivo è che Internet è stato progettato su un modello di "gruppo di utenti mutuamente **fidati** collegati in una rete trasparente". In un modello del genere la sicurezza è scontata. Oggi Internet coinvolge molti utenti - che hanno bisogno di comunicare - ma che non si fidano tra di loro. A volte utenti potrebbero non fidarsi a vicenda e quindi preferire comunicazioni anonime o attraverso terze parti, altre volte invece non ci si fida dell'hardware, software o dell'etere attraverso cui comunicano.
+
+>Ricorda che la comunicazione tra utenti mutuamente fidati **non è lo standard**, ma un'eccezione.
+
+---
+
