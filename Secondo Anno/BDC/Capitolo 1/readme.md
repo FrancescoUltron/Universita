@@ -1,3 +1,5 @@
+# Introduzione
+
 Uno dei principali compiti dei sistemi informatici è quello di **raccogliere, mantenere e conservare** dati. I sistemi informatici garantiscono che i dati vengano: 
 
 - Conservati in modo **permanente.**
