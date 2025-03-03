@@ -115,6 +115,7 @@ Esempio tabella: Docenza
 | Basi di dati |    Rossi    |
 |     Reti     |    Neri     |
 |  Linguaggi   |    Verdi    |
+
 Le colonne - dette **attributi** - costituiscono lo *schema di relazione* - in questo caso lo schema è:  **Docenza(Corso, NomeDocente)**.
 
 Le righe rappresentano l'istanza e possono *variare nel tempo* - **l'istanza di una relazione** è costituita dall'insieme delle sue righe.
