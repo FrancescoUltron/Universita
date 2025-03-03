@@ -1,1 +1,1 @@
-## Appunti del libro: Basi di dati (quarta edizione) di Paolo Atzeni
+### Appunti presi dal libro: Basi di dati (quarta edizione) di Paolo Atzeni
