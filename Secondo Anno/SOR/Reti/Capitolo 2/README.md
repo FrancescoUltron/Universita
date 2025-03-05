@@ -25,7 +25,7 @@ I client invece dovranno comunicare tra di loro **tramite server** e potrebbero 
 
 Nel secondo modello non abbiamo server - ma **peers** - cioè coppie di host - questi **comunicano direttamente tra di loro** e sono essenzialmente degli end-system che fanno richieste e forniscono servizi fra di loro. Uno dei punti di forza è la sua **scalabilità** - perchè ogni peer aggiunge sia carico di lavoro che capacità di servizio del sistema. Sono economiche - ma la gestione è molto complessa - anche da un punto di vista di sicurezza.
 
-![Immagine non trovata](Immagini/P2P.png)
+![Immagine non trovata](Immagini/applicazioni_di_rete.png)
 
 ---
 **Processi comunicanti**
@@ -85,7 +85,7 @@ Non solo - alcune applicazioni per essere efficaci - hanno bisogno di spedire un
 
 L'ultima cosa che un servizio di trasporto potrebbe fornire sono servizi relativi alla sicurezza come: Integrità dei dati o cifratura dei dati.
 
-![Immagine non trovata](Immagini/applicazioni_di_reti.png)
+![Immagine non trovata](Immagini/applicazioni_di_rete.png)
 
 ---
 **Protocolli di trasporto offerti da Internet**
