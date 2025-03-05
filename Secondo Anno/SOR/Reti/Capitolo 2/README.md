@@ -21,11 +21,11 @@ Quindi lo sviluppatore deve stabilire l'**architettura dell'applicazione** - com
 Nel primo modello abbiamo un client e un server; Il *server* si trova sempre su un host attivo della rete - con un indirizzo **IP permanente** e solitamente si trova all'interno di data center - per ragioni di scalabilità. Il suo compito è quello di rispondere alle richieste dei client.
 I client invece dovranno comunicare tra di loro **tramite server** e potrebbero avere degli indirizzi IP dinamici. (Ex: HTTP).
 
-//Aggiungi immagine
+![Immagine non trovata](Immagini/architettura-client-server.png)
 
 Nel secondo modello non abbiamo server - ma **peers** - cioè coppie di host - questi **comunicano direttamente tra di loro** e sono essenzialmente degli end-system che fanno richieste e forniscono servizi fra di loro. Uno dei punti di forza è la sua **scalabilità** - perchè ogni peer aggiunge sia carico di lavoro che capacità di servizio del sistema. Sono economiche - ma la gestione è molto complessa - anche da un punto di vista di sicurezza.
 
-//Aggiungi immagine
+![Immagine non trovata](Immagini/P2P.png)
 
 ---
 **Processi comunicanti**
@@ -48,7 +48,7 @@ Ogni messaggio inviato tra applicazione deve passare per la rete sottostante. Un
 
 Durante una comunicazione tra hosts ci saranno due socket.
 
-//Immagine
+![Immagine non trovata](Immagini/socket.png)
 
 ---
 **Indirizzamento**
@@ -85,7 +85,7 @@ Non solo - alcune applicazioni per essere efficaci - hanno bisogno di spedire un
 
 L'ultima cosa che un servizio di trasporto potrebbe fornire sono servizi relativi alla sicurezza come: Integrità dei dati o cifratura dei dati.
 
-//Immagine
+![Immagine non trovata](Immagini/applicazioni_di_reti.png)
 
 ---
 **Protocolli di trasporto offerti da Internet**
@@ -99,7 +99,7 @@ Il primo è un protocollo che fornisce un *servizio orientato alla connessione* 
 Il secondo protocollo - UDP - è un protocollo leggero con servizio minimalista. UDP è senza connessione (niente handshake) e il trasferimento dei dati **NON** è affidabile - quindi non è detto che il messaggio - dopo aver superato la socket - arrivi al processo giusto.
 Non include un meccanismo di controllo della congestione e può 'spingere' i dati al livello sottostante a **qualsiasi velocità.**
 
-//immagine
+![Immagine non trovata](Immagini/protocolli_usati.png)
 
 ---
 **Piccola sezioni sulla sicurezza**
