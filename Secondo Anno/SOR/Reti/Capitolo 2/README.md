@@ -25,7 +25,7 @@ I client invece dovranno comunicare tra di loro **tramite server** e potrebbero 
 
 Nel secondo modello non abbiamo server - ma **peers** - cioè coppie di host - questi **comunicano direttamente tra di loro** e sono essenzialmente degli end-system che fanno richieste e forniscono servizi fra di loro. Uno dei punti di forza è la sua **scalabilità** - perchè ogni peer aggiunge sia carico di lavoro che capacità di servizio del sistema. Sono economiche - ma la gestione è molto complessa - anche da un punto di vista di sicurezza.
 
-![Immagine non trovata](Immagini/applicazioni_di_rete.png)
+![Immagine non trovata](Immagini/architettura-P2P.png)
 
 ---
 **Processi comunicanti**
