@@ -48,7 +48,7 @@ Le basi di dati sono state ideate per evitare questi problemi - gestendo le info
 
 Cerchiamo di dare una definizione anche da un punto di vista tecnologico.
 
-Un *sistema di gestione di basi di dati (Data Base Managment System - DBMS)* è un sistema software che gestisce collezioni di dati che siano **grandi, condivise e pertinenti** assicurando **affidabilità e privatezza.**
+Un *sistema di gestione di basi di dati (Data Base Managment System - DBMS)* è un sistema software che gestisce collezioni di dati che siano **grandi, condivise e persistenti** assicurando **affidabilità e privatezza.**
 
 > Una base di dati è collezione di dati gestita da un DBMS.
 
