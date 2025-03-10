@@ -101,6 +101,8 @@ Possiamo dividere i modelli di dati in:
 
 - **Concettuale**  - Descrivono i concetti del mondo reale e descrivono i dati in maniera indipendente dalla scelta del modello logico. Sono usati agli inizi di un progetto, alcuni modelli famosi sono: **Entita-Relazione** e **Modello Classi Associazioni (UML)**.
 
+- **Fisico** - Per il momento non ci interessa.
+
 >**Concettuale**: Che cosa rappresentano i dati (e come si connettono a livello di concetto). **Logico**: Come strutturiamo questi dati in un sistema per l'elaborazione e la gestione.
 
 ---
