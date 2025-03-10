@@ -187,6 +187,8 @@ Quando la velocità di arrivo dei pacchetti è maggiore rispetto a quella di tra
 
 ![Immagine non trovata](Immagini/store-and-forward.png)
 
+Possiamo generalizzare la formula di trasferimendto di $p$ pacchetti in questo modo: $$d_{end-to-end} = (N+P-1)\frac{L}{R}$$
+
 ---
 **Circuit Switching (Commutazione a circuito)**
 
