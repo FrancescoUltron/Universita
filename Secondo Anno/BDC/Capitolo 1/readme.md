@@ -105,6 +105,8 @@ Possiamo dividere i modelli di dati in:
 
 >**Concettuale**: Che cosa rappresentano i dati (e come si connettono a livello di concetto). **Logico**: Come strutturiamo questi dati in un sistema per l'elaborazione e la gestione.
 
+> Il modello relazionale è basato sui valori dei record e quindi sulle **chiavi** in modo tale da 'discriminare' elementi con gli stessi valori, mentre nel modello ad oggetti ogni oggetto ha una proprià entità.
+
 ---
 **Schemi e istanze**
 
