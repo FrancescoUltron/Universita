@@ -1,0 +1,1 @@
+### Appunti presi durante le lezioni e dal libro: Linguaggi Modello Complessità di Giorgio Ausiello, Giorgio Gambosi e Luigi Laura
