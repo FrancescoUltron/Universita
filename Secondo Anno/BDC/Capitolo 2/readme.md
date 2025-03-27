@@ -1,3 +1,5 @@
+#Capitolo 2 - Il modello relazionale
+
 Maggior parte dei DB si basa sul modello relazionale che permette di realizzare la proprietà di indipendenza dei dati. L'affermazione è stata lenta a causa dell'alto livello di astrazione e quindi della difficoltà di trovare delle strutture efficienti e diverse rispetto a quelle iniziali.
 
 > Il modello è stato introdotto negli anni '70 da E.F. Codd.
@@ -84,8 +86,8 @@ Una delle caratteristiche fondamentali del modello relazionale - indicato con *b
 
 > Altri modelli - reticolare e gerarchico - fanno i riferimenti tramite puntatori
 
-![Immagine non trovata](Immagini/relazionale.png)
-![Immagine non trovata](Immagini/reticolare.png)
+![Immagine non trovata](Immagini/modellorelazionale.png)
+![Immagine non trovata](Immagini/modelloreticolare.png)
 
 Il modello reticolare basato su valori ha diversi vantaggi:
 
