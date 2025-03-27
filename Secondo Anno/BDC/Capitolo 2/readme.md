@@ -34,7 +34,7 @@ Guardiamo nel dettaglio le relazioni.
 In matematica - dati due insiemi $D_1$ e $D_2$ - si chiama **prodotto cartesiano** l'insieme delle coppie ordinate $(v_1, v_2)$ tali che $v_1 \in D_1$ e $v_2 \in D_2$. Per esempio se abbiamo $A = [1,2,4]$ e $B = [a, b]$ - il prodotto cartesiano sarà: $$D_1 \times D_2 = [(1,a),(1,b)(2,a)(2,b)(3,a)(3,b)]$$
 Una **relazione matematica** è un sottoinsieme di questo risultato - queste relazioni possono essere rappresentate come delle tabelle. Di seguito le rappresentazioni tabellari del prodotto cartesiano e di una possibile relazione.
 
-!()[] ----- AGGIUNGI IMMAGINE
+![Immagine non trovata](Immagini/prodotto.png)
 
 > Siccome le nostre basi di dati sono memorizzati su sistemi di dimensione finita - le relazioni devono essere per forza finite.
 
@@ -59,7 +59,7 @@ Una relazione è un insieme di record omogenei - cioè definiti sugli stessi cam
 
 Avendo introdotto gli attributi - ora non abbiamo più bisogno di un ordine delle colonne. Non ci serve più parlare di domini siccome possiamo fare riferimento direttamente agli attributi.
 
-!()[] /// AGGIUNGIU IMMAGINE: partita
+![Immagine non trovata](Immagini/partite.png)
 
 Formalizziamo i concetti: Indichiamo con $D$ l'insieme dei domini. La funzione $$dom:X\to D$$ Associa a ciascun attributo $A\in X$ un dominio $dom(A)\in D$. Diamo ora la definizione:
 
@@ -84,8 +84,8 @@ Una delle caratteristiche fondamentali del modello relazionale - indicato con *b
 
 > Altri modelli - reticolare e gerarchico - fanno i riferimenti tramite puntatori
 
-//Immagine modello relazionale
-//Immagine modello reticolare
+![Immagine non trovata](Immagini/relazionale.png)
+![Immagine non trovata](Immagini/reticolare.png)
 
 Il modello reticolare basato su valori ha diversi vantaggi:
 
@@ -113,7 +113,7 @@ Riassumiamo le definizioni relative al modello relazionale:
 Uno dei problemi maggiori del sistema relazionale è mappare delle strutture nidificate.
 Possiamo semplificare questa mappatura spezzando le informazione in diverse tabelle.
 
-//Immagine delle ricevute
+![Immagine non trovata](Immagini/ricevute.png)
 
 Ovviamente possiamo avere delle rappresentazioni diverse in base a quello che dobbiamo rappresentare.
 
@@ -130,11 +130,9 @@ Il modello relazionale è semplice e potente - ma molto rigido - infatti le info
 
 > Il valore NULL **denota l'assenza di un valore del dominio** e NON è parte del dominio.
 
-// Immagine Città - prefettura
+![Immagine non trovata](Immagini/Null.png)
 
 Notiamo che per alcune informazioni è impossibile avere un valore NULL perché renderebbe inutilizzabile la base di dati - per esempio il numero di matricola non può essere NULL.
-
-// Immagine NULL
 
 > Quindi non tutti gli attributi possono assumere il valore NULL.
 
@@ -172,8 +170,6 @@ Possiamo ammettere anche espressioni più complesse purché definite sui valori 
 
 Una chiave è un insieme di di attributi che vengono utilizzati per andare ad identificare univocamente le tuple di una relazione  - per esempio l'attributo matricola.
 
-//Aggiungi immagine matricola
-
 Formalizziamo questo concetto:
 
 - Un insieme $K$ di attributi è **superchiave** di una relazione $r$ se $r$ non contiene due tuple distinte  $t_1$ e $t_2$ con $t_1[K] = t_2=[K]$.
@@ -193,7 +189,7 @@ Quindi abbiamo trovato diverse chiavi per una relazione - ma cosa succede se in 
 
 Essenzialmente in alcuni casi le chiavi perdono il loro senso perché non permettono di andare ad identificare in modo univoco le tuple.
 
-// Immagine - 2.17
+![Immagine non trovata](Immagini/mario.png)
 
 Nell'esempio sopra non possiamo inserire una nuova tupla con Mario Rossi perché non sappiamo se ci stiamo riferendo allo stesso studente o ad un altro.
 
@@ -201,7 +197,7 @@ Dobbiamo imporre dei limiti alla presenza di valori nulli - la soluzione è semp
 
 > Evidenziamo questa caratteristica con una sottolineatura nella relazione.
 
-// Immagine 2.18
+![Immagine non trovata](Immagini/relazioni.png)
 
 > Se non ci sta un attributo che può essere chiave possiamo introdurre nella relazione un codice identificativo.
 
@@ -218,5 +214,5 @@ Vediamo il caso in cui la chiave di $R_2$ è unica e composta da un solo attribu
 
 Nel caso generale facciamo attenzione al fatto che ciascuno degli attributi in $X$ deve corrispondere a un preciso attributo della chiave primaria $K$ in $R_2$. E' quindi necessario specificare un ordinamento sia nell'insieme $X$ sia in $K$. Indicando gli attributi in ordine $X=A_1A_2...A_p$ e $K=B_1B_2...B_p$ il vincolo è soddisfatto se per ogni tupla $t_1$ in $R_1$ senza nulli su $X$ esiste una tupla $t_2$ in $R_2$ con $t_1[A_i]=t_2[B_i]$ per ogni $1\leq i\leq p$.
 
-//Immagine Integritàreferenziale
+![Immagine non trovata](Immagini/integritàreferenziale.png)
 
