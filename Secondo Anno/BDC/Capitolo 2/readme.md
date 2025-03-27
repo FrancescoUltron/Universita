@@ -1,4 +1,4 @@
-#Capitolo 2 - Il modello relazionale
+# Capitolo 2 - Il modello relazionale
 
 Maggior parte dei DB si basa sul modello relazionale che permette di realizzare la proprietà di indipendenza dei dati. L'affermazione è stata lenta a causa dell'alto livello di astrazione e quindi della difficoltà di trovare delle strutture efficienti e diverse rispetto a quelle iniziali.
 
