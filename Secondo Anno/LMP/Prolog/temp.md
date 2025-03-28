@@ -1,1 +1,1 @@
-Appunti della parte di prolog ancora da aggiungere
+## Appunti del libro: Prolog For Artificial Inteligence - Ivan Bratko
