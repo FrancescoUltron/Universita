@@ -65,7 +65,7 @@ Essenzialmente stiamo dicendo che non ha senso che due quintuple che con la stes
 
 Quindi una quintupla è un **indicazione precisa** - **non ambigua** - circa quale operazione eseguire per giungere la soluzione. Queste indicazioni vengono fornite dal progettista della macchina.
 
-Quindi dire che $P$ non corrisponde ad una funzione significa avere diverse quintuple con la stessa coppia $(q,a)$ - ma che eseguono azioni diverse: $$<q,a,b_1,q_1,m_1>\;\;\;<q,a,b_2,q_2,m_1>\;\;...\;\;<q,a,b_k,q_k,m_k>$$
+Quindi dire che $P$ non corrisponde ad una funzione significa avere diverse quintuple con la stessa coppia $(q,a)$ - ma che eseguono azioni diverse: $$<q,a,b_1,q_1,m_1> <q,a,b_2,q_2,m_1>...<q,a,b_k,q_k,m_k>$$
 Chiamiamo questa struttura **multi-quintupla**. Ma cosa accade se l'insieme delle quitnuple di una macchina $T$ ha questa multi-quintupla e durante la computazione $T(x)$ - $T$ - si trova nello stato interno $q$ e legge $a$?
 
 Possiamo descrivere il comportamento della macchina in due maniere diverse:
