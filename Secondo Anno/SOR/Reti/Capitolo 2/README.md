@@ -645,7 +645,7 @@ L'effetto è che i peer in grado di inviare dati a velocità compatibili tendono
 
 Questo meccanismo è chiamato *tit-for-tat* - molto usato anche se dimostrato che può essere aggirato.
 
-![Immagine non trovata](Immagini/bittorrent.png)
+![Immagine non trovata](Immagini/bittorent.png)
 
 > **Tabelle Hash Distribuite (DHT):** Semplici database i cui record sono distribuiti tra i peer di un sistema P2P.
 
