@@ -143,7 +143,7 @@ HTTP definisce come i client richiedano le pagine ai server e come questi le tra
 
 > Molto semplificato - quando il client richiede una pagina web il browser invia al server messaggi di richiesta HTTP per gli oggetti della pagina. Il server riceve le richieste e risponde con messaggi di risposta HTTP con gli oggetti.
 
-//Inserisci Immagine
+![Immagine non trovata](Immagini/clientserver.png)
 
 HTTP usa come protocollo di trasporto TCP quindi - il client HTTP richiede prima una connessione TCP con il server. Quando stabilita comunicano tramite le socket. Quindi il client invia richieste e riceve risposte tramite la sua socket - analogo per il server.
 
@@ -197,7 +197,7 @@ Quando clicchiamo su un ipertesto stiamo apriamo una connessione TCP nella quale
 
 > Il tempo di richiesta-risposta consuma un altro RTT - ogni oggetto subisce un ritardo di due RTT
 
-//Immagini
+![Immagine non trovata](Immagini/rtt.png)
 
 ---
 **HTTP con connessioni persistenti**
@@ -234,7 +234,7 @@ La riga **host** specifica l'host su cui risiede l'oggetto. La riga **Connection
 
 Guardiamo ora il formato generale di un messaggio di richiesta.
 
-//Immagine
+![Immagine non trovata](Immagini/messaggiorichiesta.png)
 
 Nell'immagine sopra si nota alla fine un'ultimo campo - presente quando si fanno richieste in modalità POST - il corpo contiene ciò che l'utente ha immesso in un campo di un form.
 
@@ -274,7 +274,7 @@ Nella riga di intestazione vediamo come la connection è close - significa che i
 
 La riga **server** indica il tipo di server che ha generato la risposta - mentre user-agent è analoga alla richiesta. **Last-modified** indica l'istante in cui l'oggetto è stato creato o modificato per l'ultima volta. Le ultime due specificano il numero di byte dell'oggetto inviato e il tipo di file. 
 
-//Immagine 
+![Immagine non trovata](Immagini/messaggiorisposta.png)
 
 Il codice di stato e l'espressione associata indicano il risultato della richiesta. Tra i codici più comuni troviamo:
 
@@ -307,7 +307,7 @@ Questa tecnologia presenta quattro componenti:
 
 4) Un database sul sito.
 
-//Immagine 2.10
+![Immagine non trovata](Immagini/cookie.png)
 
 Nella risposta HTTP sarà presenta l'intestazione **Set-cookie** che contiene il numero identificativo per l'utente.
 
@@ -382,7 +382,7 @@ Altra caratteristica di HTTP/2 è che il server può effettuare un invio *push* 
 
 Presenta fin dagli albori di Internet - rappresenta mezzo di comunicazione asincrono. Con caratteristiche di velocità, possibilità di avere allegati e collegamenti ipertestuali. In questo paragrafo ci occuperemo dei protocolli usati per implementare la posta elettronica.
 
-//Immagine 
+![Immagine non trovata](Immagini/postaelettronica.png)
 
 Il sistema postale di Internet si basa su tre componenti principali:
 
@@ -409,7 +409,7 @@ E' il protocollo cuore della posta elettronica - ha il compito di treasferire me
 
 > Per esempio - tratta il corpo di tutti i messaggi come semplice ASCII a 7 bit. Questa cosa richiede che i messaggi vengano codificati e decodificati prima e dopo essere inviati.
 
-//Immagine del funzionamento dello scambio di messaggi SMTP
+![Immagine non trovata](Immagini/SMTP.png)
 
 > SMTP *non usa mail server intermedi* - la connessione TCP ha luogo direttamente fra i due server.
 
@@ -541,7 +541,7 @@ Il TTL è il **Time to Live** - il tempo residuo di vita di un record quando sca
 
 Query e messaggi di risposta del DNS hanno lo **stesso formato** - ossia:
 
-//FIGURA 2.21
+![Immagine non trovata](Immagini/messaggiDNS.png)
 
 - *Sezione di intestazione* composta da 12 byte che contiene al suo interno altri campi. 16 bit che identificano la **richiesta** - viene copiato nei messaggi di risposta. campo flag che indica se un messaggio è una **richiesta (0) o risposta (1).** Se il DNS è autoritativo può impostare un bit di **richiesta di ricorsione** - effettua ricorsione se non si dispone del record. I 4 campi rimanenti identificano il *"numero di"* occorenze delle quattro sezioni.
 
@@ -578,7 +578,7 @@ Tutte le applicazioni descritte finora sono estremamente dipendenti dall'infrast
 
 Illustriamo la scalabilità dell'architettura:
 
-//FIGURA 2.22
+![Immagine non trovata](Immagini/P2P.png)
 
 Sia $u_i$ la banda di upload del collegamento di accesso al server - mentre $d_i$ la banda di download del collegamento di accesso dell'i-esimo peer. Sia $F$ la dimensione del file da distribuire in bit e $N$ il numero di peer che vuole fare una copia del file.
 
@@ -607,7 +607,7 @@ Mettendo assieme le osservazioni notiamo come il tempo di distribuzione minimo p
 Ovviamente come nel caso precedente questa disuguglianza ci offre un minimo di tempo di distribuzione - ossia: $$D_{P2P} = max[\frac{F}{u_s},\frac{F}{d_{min}},\frac{NF}{u_s+\Sigma^N_{i=1}u_i}]$$
 Mettendo a confronto i due risultati ottenuti vediamo come la distribuzione peer-to-peer è molto più veloce rispetto alla distribuzione con architettura client-server.
 
-//Immagine graso
+![Immagine non trovata](Immagini/confronto.png)
 
 ---
 **Bittorrent**
@@ -644,6 +644,8 @@ L'effetto è che i peer in grado di inviare dati a velocità compatibili tendono
 > Il restante dei peer è detto **choked**.
 
 Questo meccanismo è chiamato *tit-for-tat* - molto usato anche se dimostrato che può essere aggirato.
+
+![Immagine non trovata](Immagini/bittorrent.png)
 
 > **Tabelle Hash Distribuite (DHT):** Semplici database i cui record sono distribuiti tra i peer di un sistema P2P.
 
@@ -722,7 +724,7 @@ Esaminiamo adesso i meccanismi dietro l'intercettazione e il reindirizzamento di
 
 6) Il client - ricevuto l'IP - stabilisce una connessione TCP e invia una richiesta GET HTTP - se viene usato DASH viene prima inviato un file che specifica i vari URL per le versioni diverse del video.
 
-//Immagine 2.25
+![Immagine non trovata](Immagini/CDN.png)
 
 ---
 **Strategie di selezione dei cluster**
