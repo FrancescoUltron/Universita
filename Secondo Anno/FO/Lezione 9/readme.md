@@ -7,7 +7,7 @@
 q\in Q_F\;\;\;\;\;se\;la\;computazione\;T(x)\;termina\\
 \\
 non\;termina\;\;\;\;\;se\;la\;computazione\;non\;T(x)\;termina
-\end{cases} $$
+\end{cases}$$
 
 Sappiamo che $L_H$ è accettabile - siccome non è decidibile - allora $L_H^C$ **non è accettabile**.
 
