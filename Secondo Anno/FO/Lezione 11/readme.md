@@ -110,10 +110,10 @@ La simulazione di tutte le computazioni deterministiche è eseguita dall'invocaz
 
 Di seguito lo schema della funzione ricorsiva:
 
-//Immagine slide 12.
+![Immagine non trovata](Immagini/Qsimularicorsione.png)
 
 Il programma al completo:
 
-//Immagine slide 13.
+![Immagine non trovata](Immagini/programma.png)
 
 Abbiamo finalmente fatto vedere che il linguaggio PascalMinimo è **Turing-equivalente.**
