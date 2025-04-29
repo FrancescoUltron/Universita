@@ -1,4 +1,4 @@
-# 7 - Maeehine - Linguaggi e Funzioni
+# 7 - Macchine - Linguaggi e Funzioni
 
 Partendo dal concetto di operazione elementare - Turing ha introdotto un modello di calcolo: Machina di Turing che è essenzialmente un linguaggio usato per descrivere degli algoritmi.
 
