@@ -1,0 +1,33 @@
+/*Aritmetica*/
+
+/*Greatest Common Divisor*/
+gcd(X, X, X).  % Caso base
+
+gcd(X, Y, D) :-
+    X < Y,
+    Y1 is Y - X,
+    gcd(X, Y1, D).
+
+gcd(X, Y, D) :-
+    Y < X,
+    gcd(Y, X, D).
+
+/*Conta la lunghezza di una lista*/
+lenght([], 0).
+lenght([_|T], N) :-
+    lenght(T, N1),
+    N is 1 + N1.
+
+/*Esercizi*/
+
+/*3.16 - Massimo*/
+max(X, Y, X) :- X >= Y.
+max(X, Y, Y) :- Y > X.
+
+/*3.17 - Massimo in una lista*/
+maxlist([X], X).
+maxlist([H|T], Max) :-
+    maxlist(T, TempMax),
+    max(H, TempMax, Max).
+
+/*3.18 - Somma di una lista*/
