@@ -235,5 +235,4 @@ Il buffer manager può richiedere delle scritture in due modi diversi:
 
     - **No-steal:** l’operazione viene messa in attesa finché non si libera una pagina.
 
----
-#### DBMS e file system
+
