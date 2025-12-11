@@ -1,0 +1,167 @@
+:- consult('mini_wordnet.pl').
+
+%MODULO 1: Accesso Lessicale
+
+%--------- Esercizio 1.1: Cercatore di sinonimi ----------
+sinonimi(Parola, ListaSinonimi) :-
+    s(ID, _, Parola, n, _, _),
+    findall(S, (s(ID, _, S, n, _, _), S \= Parola), ListaSinonimi).
+
+%Query di Prova:
+% ?- sinonimi(dog, X).                 X = [canine]; X = [].
+% ? - sinonimi(X, [feline, kitty]).    X = cat; False
+%
+% Nella prima query restituisce due X perché ci sono due predicati
+% diversi per dog.
+
+
+%---------- Esercizio 1.2: Glossario semantico -----------
+spiega(Parola) :-
+    s(ID, _, Parola, n, _, _),
+    g(ID, S),
+    write(S).
+
+%Query di Prova:
+% ?- spiega(face)
+% ?- spiega(dog)
+%
+% Hanno più significati quindi ;.
+
+
+% MODULO 2: Ragionamento Tassonomico
+
+%---------- Esercizio 2.1: Iperonimo Diretto --------------
+genitore(Parola, Genitore) :-
+    s(IdParola, _, Parola, n, _, _),
+    hyp(IdParola, IdGenitore),
+    s(IdGenitore, _, Genitore, n, _, _).
+
+%Query di Prova:
+% ?- genitore(mammal, X)     X = vertebrate
+% ?- genitore(face, X)       X = vertical surface; X=front; ecc...
+
+
+% --------- Esercizio 2.2: L'antenato ------------
+iperonimo(Parola, Antenato) :- genitore(Parola, Antenato).
+iperonimo(Parola, Antenato) :-
+    s(IdParola, _, Parola, n, _, _),
+    iperonimo_id(IdParola, IdAntenato),
+    s(IdAntenato, _, Antenato, n, _, _).
+
+
+iperonimo_id(Id, IdGenitore) :-
+    hyp(Id, IdGenitore).
+iperonimo_id(Id, IdAntenato) :-
+    hyp(Id, IdIntermedio),
+    iperonimo_id(IdIntermedio, IdAntenato).
+
+%Query di Prova:
+% ?- iperonimo(face, surface).   true;true;true;true;false
+% ?- iperonimo(dog, X).
+% ?- iperonimo(X, surface).      X = face;X = side;X=vertical surface
+%
+% Nel primo ci sono diversi significati per face quindi cerca se
+% Antenato è iperonimo di ognuno dei significati
+
+%---------- Esercizio 2.3: Tassonomia Completa --------------
+
+catena_iperonimi(Parola, []) :- \+ iperonimo(Parola, _).
+catena_iperonimi(Parola, [Genitore| Antenati]) :-
+    genitore(Parola, Genitore),
+    catena_iperonimi(Genitore, Antenati).
+
+%Query di Prova:
+%
+% ?- catena_iperonimi(plant, X).
+% ?- catena_iperonimi(surface, X).
+%
+
+%MODULO 3: Similiarità e Inferenza
+
+%----------- Esercizio 3.1: Fratelli Semantici -------------
+fratello(A, B) :-
+    genitore(A, X),
+    genitore(B, X),
+    A \= B.
+
+%Query di Prova:
+%
+% ?- fratello(scheme, X). X=play
+% ?- fratello(thing, X).  X=object;X=casual agent;X=matter;X=process
+% ?- fratello(window, fly). true;true;true;treu;false
+%
+% Il terzo da diversi true perché ci sono diversi significati di true in
+% mini_wordnet.pl
+
+
+%------------ Esercizio 3.2: Least Common Subsumer -----------
+lcs(Parola1, Parola2, AntenatoComune) :-
+    catena_iperonimi(Parola1, Catena1),
+    catena_iperonimi(Parola2, Catena2),
+    trova_antenato(Catena1, Catena2, AntenatoComune), !.
+
+trova_antenato([AntenatoComune|_], Catena2, AntenatoComune):-
+    member(AntenatoComune, Catena2), !.
+trova_antenato([_|T], Catena2, AntenatoComune) :-
+    trova_antenato(T, Catena2, AntenatoComune).
+
+%Query di Prova:
+%
+% ?- lcs(scheme, 'plan of action', X). X=plan
+%
+
+%MODULO 4: Logica delle azioni (Entailment)
+
+%------------ Esercizio 4.1: Deduzione dello stato ------------
+
+implica(AzioneA, AzioneB) :-
+    s(IdA, _, AzioneA, _, _, _),
+    ent(IdA, IdB),
+    s(IdB, _ , AzioneB, _, _, _).
+
+%Query di Prova:
+%
+%?- implica(snoring, sleeping)  true
+%?- implica(running, X)         X=moving;X=sweating
+%?- implica(X, Y)          Si vedono tutte le implicazioni.
+
+%MODULO 5: Sfida della Disambiguazione
+
+%-------------- Esercizio 5.1: Il calcolo combinatorio --------
+
+conta_interpretazioni([], 1).
+conta_interpretazioni([Parola | RestoFrase], Totale) :-
+    numero_sensi(Parola, NumSensi),
+    conta_interpretazioni(RestoFrase, TotaleRestoFrase),
+    Totale is TotaleRestoFrase * NumSensi, !.
+
+numero_sensi(Parola, N):-
+    findall(Sensi, s(_, _, Parola, n, Sensi, _), ListaSensi),
+    length(ListaSensi, NumSensi),
+    neutro(NumSensi, N).
+
+% Se una parola non sta in mini_wordnet, invece di assegnargli 0 sensi,
+% gliene diamo 1. Per evitare che NumSensi venga unificato con 0 e
+% quindi che l'intera frase abbia 0 sensi totali (a causa della
+% moltiplicazione), questo lo facciamo con il predicato neutro(X, N).
+
+neutro(0, 1).
+neutro(N, N).
+
+%Query di Prova:
+%
+% ?-
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
